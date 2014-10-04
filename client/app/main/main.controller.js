@@ -10,11 +10,13 @@ angular.module('wildfireApp')
     });
 
     $scope.addProduct = function() {
-      if($scope.newProduct === '') {
+      if($scope.productName === '' || $scope.productDesc === '' || $scope.productPrice === '') {
         return;
       }
-      $http.post('/api/products', { name: $scope.newProduct });
-      $scope.newProduct = '';
+      $http.post('/api/products', { name: $scope.productName, desc: $scope.productDesc, price: $scope.productPrice });
+      $scope.productName = '';
+      $scope.productDesc = '';
+      $scope.productPrice = '';
     };
 
     $scope.deleteProduct = function(product) {
