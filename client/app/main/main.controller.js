@@ -2,26 +2,26 @@
 
 angular.module('wildfireApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.awesomeThings = [];
+    $scope.productList = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-      socket.syncUpdates('thing', $scope.awesomeThings);
+    $http.get('/api/products').success(function(productList) {
+      $scope.productList = productList;
+      socket.syncUpdates('product', $scope.productList);
     });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
+    $scope.addProduct = function() {
+      if($scope.newProduct === '') {
         return;
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
+      $http.post('/api/products', { name: $scope.newProduct });
+      $scope.newProduct = '';
     };
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+    $scope.deleteProduct = function(product) {
+      $http.delete('/api/products/' + product._id);
     };
 
     $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('thing');
+      socket.unsyncUpdates('product');
     });
   });
