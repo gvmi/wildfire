@@ -15,7 +15,7 @@ angular.module('wildfireApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/');
+          $location.path('/active');
         })
         .catch( function(err) {
           $scope.errors.other = err.message;
