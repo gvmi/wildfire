@@ -1,5 +1,6 @@
-# Wildfire Environment
-## Unix Systems
+# Setup Development Environment
+## Unix
+0. Download and install Node.js, Ruby, MongoDB
 1. `npm install -g yo bower grunt-cli gulp`
 2. `npm install generator-angular-fullstack`
 3. `git clone https://github.com/gvmi/wildfire.git`
@@ -10,6 +11,7 @@
 8. `grunt serve`
 
 ## Windows
+0. Download and install Node.js, Ruby, MongoDB
 1. `npm install -g yo bower grunt-cli gulp`
 2. `npm install generator-angular-fullstack`
 3. `git clone https://github.com/gvmi/wildfire.git`
