@@ -13,7 +13,7 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/products')
+    $httpBackend.expectGET('/api/categorys')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
@@ -22,8 +22,8 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of products to the scope', function () {
+  it('should attach a list of categories to the scope', function () {
     $httpBackend.flush();
-    expect(scope.productList.length).toBe(4);
+    expect(scope.categoryList.length).toBe(4);
   });
 });

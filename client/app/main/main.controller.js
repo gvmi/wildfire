@@ -2,28 +2,27 @@
 
 angular.module('wildfireApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.productList = [];
+    $scope.categoryList = [];
 
-    $http.get('/api/products').success(function(productList) {
-      $scope.productList = productList;
-      socket.syncUpdates('product', $scope.productList);
+    $http.get('/api/categorys').success(function(categoryList) {
+      $scope.categoryList = categoryList;
+      socket.syncUpdates('category', $scope.categoryList);
     });
 
-    $scope.addProduct = function() {
-      if($scope.productName === '' || $scope.productDesc === '' || $scope.productPrice === '') {
+    $scope.addCategory = function() {
+      if($scope.categoryName === '' || $scope.categoryDesc === '') {
         return;
       }
-      $http.post('/api/products', { name: $scope.productName, desc: $scope.productDesc, price: $scope.productPrice });
-      $scope.productName = '';
-      $scope.productDesc = '';
-      $scope.productPrice = '';
+      $http.post('/api/categorys', {name: $scope.categoryName, desc: $scope.categoryDesc});
+      $scope.categoryName = '';
+      $scope.categoryDesc = '';
     };
 
-    $scope.deleteProduct = function(product) {
-      $http.delete('/api/products/' + product._id);
+    $scope.deleteCategory = function(category) {
+      $http.delete('/api/categorys/' + category._id);
     };
 
     $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('product');
+      socket.unsyncUpdates('category');
     });
   });
