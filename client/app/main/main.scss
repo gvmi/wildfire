@@ -23,6 +23,7 @@ body {
     color: #00CED1;
     text-decoration: none;
     cursor: default;
+    outline: 0;
     transition: color 1s;
     -moz-transition: color 1s; /* Firefox 4 */
     -webkit-transition: color 1s; /* Safari and Chrome */
@@ -48,7 +49,6 @@ body {
 
 #banner h1 a:hover {
     color: #FF1493;
-    /*text-decoration: none;*/
 }
 
 #login h1, #register h1 {

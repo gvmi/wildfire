@@ -3,8 +3,8 @@
 angular.module('wildfireApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
-      'link': '/home'
+      // 'title': 'Home',
+      // 'link': '/home'
     }];
 
     $scope.isCollapsed = true;
