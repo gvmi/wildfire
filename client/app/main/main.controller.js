@@ -1,28 +1,25 @@
 'use strict';
 
 angular.module('wildfireApp')
-  .controller('MainCtrl', function ($scope, $http, socket) {
-    $scope.categoryList = [];
+  .controller('MainCtrl', function ($scope, Auth, $location) {
+    $scope.user = {};
+    $scope.errors = {};
 
-    $http.get('/api/categorys').success(function(categoryList) {
-      $scope.categoryList = categoryList;
-      socket.syncUpdates('category', $scope.categoryList);
-    });
+    $scope.login = function(form) {
+      $scope.submitted = true;
 
-    $scope.addCategory = function() {
-      if($scope.categoryName === '' || $scope.categoryDesc === '') {
-        return;
+      if(form.$valid) {
+        Auth.login({
+          email: $scope.user.email,
+          password: $scope.user.password
+        })
+        .then( function() {
+          // Logged in, redirect to home
+          $location.path('/home');
+        })
+        .catch( function(err) {
+          $scope.errors.other = err.message;
+        });
       }
-      $http.post('/api/categorys', {name: $scope.categoryName, desc: $scope.categoryDesc});
-      $scope.categoryName = '';
-      $scope.categoryDesc = '';
     };
-
-    $scope.deleteCategory = function(category) {
-      $http.delete('/api/categorys/' + category._id);
-    };
-
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('category');
-    });
   });

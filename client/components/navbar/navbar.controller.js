@@ -4,7 +4,7 @@ angular.module('wildfireApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'link': '/'
+      'link': '/home'
     }];
 
     $scope.isCollapsed = true;
@@ -14,7 +14,7 @@ angular.module('wildfireApp')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/');
     };
 
     $scope.isActive = function(route) {
