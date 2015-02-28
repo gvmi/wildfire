@@ -24,6 +24,21 @@ body {
     /*max-width: 20%;*/
 }
 
+#banner h1 a {
+    color: #FAF0E6;
+    text-decoration: none;
+}
+
+#banner h1 a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#banner h1 a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
 .hero-unit {
     position: relative;
     padding: 15px 15px;

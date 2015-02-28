@@ -17,7 +17,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ getCurrentUser().name }}</p> </li>
+        <li ng-show="isLoggedIn()"><p class="navbar-text">Welcome {{ getCurrentUser().name }}!</p> </li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/home')}"><a href="/home">{{ getCurrentUser().name }}</a></li>
         <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
