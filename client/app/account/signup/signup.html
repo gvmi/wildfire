@@ -4,10 +4,10 @@
   </div>
 </header>
 
-<div class="container">
+<div class="container" id="register">
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <h1>Sign up</h1>
+      <h1>Register</h1>
       <form class="form" name="form" ng-submit="register(form)" novalidate>
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
@@ -17,7 +17,7 @@
           <input type="text" name="name" class="form-control" ng-model="user.name"
                  required/>
           <p class="help-block" ng-show="form.name.$error.required && submitted">
-            A name is required
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color: #DC143C"></span> A name is required
           </p>
         </div>
 
@@ -29,10 +29,10 @@
                  required
                  mongoose-error/>
           <p class="help-block" ng-show="form.email.$error.email && submitted">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color: #B22222"></span> Please enter a valid email.
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color: #DC143C"></span> Please enter a valid email.
           </p>
           <p class="help-block" ng-show="form.email.$error.required && submitted">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color: #B22222"></span> What's your email address?
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color: #DC143C"></span> What's your email address?
           </p>
           <p class="help-block" ng-show="form.email.$error.mongoose">
             {{ errors.email }}
@@ -49,7 +49,7 @@
                  mongoose-error/>
           <p class="help-block"
              ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color: #B22222"></span> Password must be at least 3 characters.
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="color: #DC143C"></span> Password must be at least 3 characters.
           </p>
           <p class="help-block" ng-show="form.password.$error.mongoose">
             {{ errors.password }}
@@ -57,8 +57,8 @@
         </div>
 
         <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
-            Sign up
+          <button class="btn btn-inverse btn-lg btn-login" type="submit" href="/home">
+            Register
           </button>
           <a class="btn btn-default btn-lg btn-register" href="/">
             Login
