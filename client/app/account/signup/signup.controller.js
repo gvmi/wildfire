@@ -16,7 +16,7 @@ angular.module('wildfireApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/home');
+          $location.path('/dashboard');
         })
         .catch( function(err) {
           err = err.data;

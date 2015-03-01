@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('wildfireApp')
-  .controller('HomeCtrl', function ($scope) {
+  .controller('DashboardCtrl', function ($scope) {
     $scope.message = 'Hello';
   });
