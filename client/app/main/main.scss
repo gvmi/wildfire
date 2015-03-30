@@ -1,84 +1,62 @@
 body {
-    background-image: url("/assets/images/dark_embroidery.png");
-    background-repeat: repeat;
-    font-family: 'Monda', sans-serif;
-    font-weight: normal;
-    color: #fff;
+    background-color: #F5F7FA;
+    color: #434A54;
+}
+
+.hero-unit {
+    position: relative;
+    padding: 15px 0px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 #banner {
     border-bottom: none;
     margin-top: 10%;
-    color: #FAF0E6;
+
+    h1 {
+        font-size: 66px;
+        font-weight: bold;
+
+        a {
+            color: #ED5565;
+            text-decoration: none;
+            outline: 0;
+            transition: color 1s;
+            -moz-transition: color 1s;
+            -webkit-transition: color 1s;
+            -o-transition: color 1s;
+            text-shadow: 0 1px 0 #fff, 0 2px 0 #fff, 0 3px 0 #fff, 0 4px 0 #fff, 0 5px 0 #fff;
+        }
+
+        a:hover {
+            color: #DA4453;
+        }
+
+    }
 }
 
-#banner h1 {
-    font-size: 75px;
-    font-family: 'Lobster', cursive;
-    font-weight: normal;
-}
-
-#banner h1 a {
-    color: #00CED1;
-    text-decoration: none;
-    cursor: default;
-    outline: 0;
-    transition: color 1s;
-    -moz-transition: color 1s; /* Firefox 4 */
-    -webkit-transition: color 1s; /* Safari and Chrome */
-    -o-transition: color 1s; /* Opera */
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    text-shadow: 0 1px 0 #fff,
-               0 2px 0 #fff,
-               0 3px 0 #fff,
-               0 4px 0 #fff,
-               0 5px 0 #fff,
-               0 6px 1px rgba(200,215,220,.1),
-               0 0 5px rgba(200,215,220,.1),
-               0 1px 3px rgba(200,215,220,.4),
-               0 3px 5px rgba(200,215,220,.3),
-               0 5px 10px rgba(200,215,220,.30),
-               0 20px 20px rgba(200,215,220,.20);
-}
-
-#banner h1 a:hover {
-    color: #FF1493;
-}
-
-#login h1, #register h1 {
-    margin-left: -2px;
-}
-
-.hero-unit {
-    position: relative;
-    padding: 15px 15px;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-}
-
-.btn-lg, .btn-group-lg > .btn {
-    color: #333;
+#login, #register, #settings {
+    h3 {
+        color: #656D78;
+        margin-left: -2px;
+    }
 }
 
 .has-error .help-block {
     font-weight: normal;
-    color: #fff;
-}
-
-label {
-    font-weight: normal;
+    color: #434A54;
 }
 
 .footer {
+    color: #fff;
     text-align: center;
     padding: 30px 0;
-    margin-top: 20px;
+    margin-top: 6%;
     font-weight: normal;
-}
+    box-shadow: 0px 500px 0px 500px #434A54;
 
-.footer a {color: #fff;}
+    a { color: #ED5565; }
+    a:hover { color: #DA4453; }
+
+}
